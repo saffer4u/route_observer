@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:route_observer/observed_routes.dart';
+import 'package:route_observer/analytics/firebase_analytics.dart';
 
 import '../constents/routes.dart';
 
@@ -19,16 +19,6 @@ class PageButtons extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: SizedBox(
-                height: 300,
-                child: ListView.builder(
-                  itemCount: observedRoutes.length,
-                  itemBuilder: (_, index) => Text(observedRoutes[index]),
-                ),
-              ),
-            ),
             Text(title),
             ElevatedButton(
               onPressed: () {
@@ -60,6 +50,13 @@ class PageButtons extends StatelessWidget {
                 Navigator.of(context).pushReplacementNamed(Routes.page3);
               },
               child: const Text("Push Replacement with Page 3"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                FirebaseAnalytic()
+                    .buttonPressEvent(buttonName: "Button pressed Event");
+              },
+              child: const Text("Button press event"),
             ),
           ],
         ),

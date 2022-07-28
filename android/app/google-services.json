@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "801635110220",
+    "project_id": "route-observer-5b2c7",
+    "storage_bucket": "route-observer-5b2c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801635110220:android:30dbfb8772f596696053e9",
+        "android_client_info": {
+          "package_name": "com.example.route_observer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801635110220-fb93th81ug7jnov5c7v2cf9vacm0nove.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB00y-MAwGeFnoe1I4hqoRpMSP0852qs1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801635110220-fb93th81ug7jnov5c7v2cf9vacm0nove.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

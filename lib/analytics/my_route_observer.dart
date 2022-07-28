@@ -1,14 +1,17 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:route_observer/observed_routes.dart';
+import 'package:route_observer/analytics/firebase_analytics.dart';
 
 class MyRouteObserver extends RouteObserver<PageRoute<dynamic>> {
   void _sendScreenView(PageRoute<dynamic> route, String type) {
     var screenName = route.settings.name;
     log('$type : $screenName');
-    observedRoutes.add('$type : $screenName');
+    // observedRoutes.add('$type : $screenName');
     // Keep track of all screens
+
+    // Send page trnasition info to firebase analytics
+    FirebaseAnalytic().pageTransitionEvent(screenName: screenName!);
   }
 
   @override

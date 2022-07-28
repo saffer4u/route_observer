@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:route_observer/analytics/firebase_analytics.dart';
 import 'package:route_observer/constents/routes.dart';
 
-import '../observed_routes.dart';
-
-class HomePage extends StatelessWidget{
+class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -19,15 +18,11 @@ class HomePage extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-                Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: SizedBox(
-                  height: 300,
-                  child: ListView.builder(
-                    itemCount: observedRoutes.length,
-                    itemBuilder: (_, index) => Text(observedRoutes[index]),
-                  ),
-                ),
+              ElevatedButton(
+                onPressed: () {
+                  FirebaseAnalytic().addToCartEvent();
+                },
+                child: const Text("Add to cart event"),
               ),
               ElevatedButton(
                 onPressed: () {
